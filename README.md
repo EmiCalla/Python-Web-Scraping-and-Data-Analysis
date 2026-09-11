@@ -100,36 +100,6 @@ Inner loop → books on each page
 
 The page URLs were also saved separately.
 
-### Days 61–62 — Functions and Refactoring
-
-Refactored the scraping process into a reusable function:
-
-```text
-scrap_func(url)
-```
-
-The function takes a URL, scrapes one page, and returns the books from that page.
-
-The overall structure became:
-
-```text
-Page URL
-    ↓
-scrap_func(url)
-    ↓
-Scrape one page
-    ↓
-Return that page's list
-    ↓
-result
-    ↓
-all_books.extend(result)
-    ↓
-Master list
-```
-
-This helped me understand function inputs, return values, local variables, and the difference between `append()` and `extend()`.
-
 ### Days 63–65 — Error Handling and Retry Logic
 
 Added error handling to make the scraper more resilient.
