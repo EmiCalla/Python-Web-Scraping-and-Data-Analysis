@@ -1,7 +1,5 @@
 # Python-Web-Scraping-and-Data-Analysis
 
-# Python Web Scraping and Data Analysis
-
 A learning project documenting my progress with **Python web scraping, data collection, and data analysis using Pandas**.
 
 The project uses [Books to Scrape](https://books.toscrape.com/) as a practice website and gradually develops a scraper while introducing new Python concepts.
