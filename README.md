@@ -128,6 +128,65 @@ All attempts fail → skip page → continue to next page
 
 This was my introduction to designing control flow around real-world failures rather than assuming every request will succeed.
 
+### Day 66 — Reusable Scraping Function and Defensive Scraping
+
+Separated the scraping logic into a reusable `scrap_func(url)` function and placed it in a separate Python module.
+
+The function takes a page URL, scrapes one page, and returns a list of dictionaries containing the extracted book data.
+
+The scraper also began handling missing HTML elements explicitly. When an expected element is not found, `find()` returns `None`, so the code checks for `None` before accessing attributes or nested elements.
+
+The structure became:
+
+```text
+Page URL
+   ↓
+scrap_func(url)
+   ↓
+Scrape one page
+   ↓
+Handle missing elements
+   ↓
+Return list of book dictionaries
+```
+
+This reinforced functions, parameters, return values, local scope, and defensive programming when working with webpage data.
+
+### Day 74 — 50-Page Scraper and CSV Output
+
+Returned to the project after a five-day break caused by university admission issues.
+
+Used the reusable `scrap_func()` from the Day 66 module to scrape all 50 pages of **Books to Scrape**.
+
+The scraper now:
+
+* Iterates through pages 1–50
+* Handles the homepage's different URL structure
+* Calls the reusable `scrap_func()` for each page
+* Retries failed requests up to three times
+* Skips a page if all retry attempts fail
+* Combines each page's results using `extend()`
+* Converts the collected data into a Pandas DataFrame
+* Cleans and converts the `Price` column to `float`
+* Saves the final dataset to `books.csv`
+
+The resulting dataset contains **1,000 books and 5 columns**:
+
+* Title
+* Price
+* Rating
+* Availability
+* Link
+
+The final DataFrame has the shape:
+
+```text
+(1000, 5)
+```
+
+This brought together several concepts learned throughout the project into one complete multi-page scraping workflow.
+
+
 ## Technologies Used
 
 * Python
