@@ -200,6 +200,10 @@ The project uses **Books to Scrape**, a website specifically designed for practi
 
 ## Purpose
 
-This repository is primarily a record of my learning process.
+This repository is primarily a record of my learning process, showing step by step
+how my understanding of Python and web scraping developed.
 
-The code is intentionally organized around different stages of learning rather than being presented as a single production-ready scraper. Each stage builds on concepts introduced earlier and documents how my understanding of Python and web scraping is developing.
+The most complete, production-ready version is
+[`day74_multi_page_scraping_and_saving_to_csv.py`](day74_multi_page_scraping_and_saving_to_csv.py),
+which combines error handling, retry logic, and defensive field extraction, and was
+tested successfully across a full 50-page (~1000 book) scrape of the site.
