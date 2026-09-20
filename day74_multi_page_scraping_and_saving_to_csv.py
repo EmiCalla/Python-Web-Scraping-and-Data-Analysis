@@ -1,5 +1,5 @@
 # Day 74 (20-09-2026):
-# back on track after 5 days of university issue,
+# Back on track after 5 days of university issues,
 
 from day66 import scrap_func, requests
 import pandas as pd
